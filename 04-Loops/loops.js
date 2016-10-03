@@ -17,8 +17,15 @@ function sum(arr){
 function join(arr, del){
 	str = ''
 	for(var i=0;i<arr.length;i++){
-		str += (arr[i])
+		if(del && i<arr.length-1){
+		str += (arr[i] + del)
+
 	}
+		else{
+			str += arr[i]
+		}
+	}
+	console.log(str)
 	return str
 }
 
@@ -35,18 +42,15 @@ function paramify(obj){
 		console.log(str)
 		return str
 }
-
 function paramifyObjectKeys(obj){
+var arr2 = Object.keys(obj)
 var arr = []
-	for(var key in obj){
-		if(obj.hasOwnProperty(key)){
-		arr.push(key+'='+obj[key])
+for(var i=0;i<arr2.length;i++){
+		arr.push(arr2[i]+'='+obj[arr2[i]])
 	}
-	}
-	console.log(arr)
 		arr = arr.sort()
+		console.log(arr)
 		str = arr.join('&')
-		console.log(str)
 		return str	
 }
 
@@ -73,4 +77,36 @@ for(var i=0;i<arr.length;i++){
 console.log(arr2)
 return arr2
 }
+
+function gridGenerator(num){
+	var str = ''
+	for(var i=1;i<=num;i++){
+	for(var j=1;j<=num;j++){
+		if(i%2 == 1){
+			if(j%2 == 1){
+				str += '#'
+			}
+			else{
+				str += ' '
+			}
+		}
+		else{
+			if(j%2 == 1){
+				str += ' '
+			}
+			else{
+				str += '#'
+			}
+		}
+		}
+		str += '\n'
+	}
+	return str
+}
+
+
+
+
+
+
 
