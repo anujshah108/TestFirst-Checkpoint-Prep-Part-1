@@ -1,31 +1,27 @@
-var value = function(str){
-	return eval(str)
+var value1 = function(){
+	return eval(this.str)
 }
-var add = function(num){
+var add1 = function(num){
 	this.str += '+'+num
 }
-var subtract = function(num){
+var subtract1 = function(num){
 	this.str += '-'+num
 }
-var multiply = function(num){
+var multiply1 = function(num){
 	this.str += '*'+num
 }
-var divide = function(num){
+var divide1 = function(num){
 	this.str += '/'+num
 }
 
 function createCalculator(){
 	var myObj = {
 	str: '0',
-	value: value(this.str),
-	add: add()
-	subtract: subtract()
-	multiply: multiply()
-	divide: divide()
+	value: value1,
+	add: add1,
+	subtract: subtract1,
+	multiply: multiply1,
+	divide: divide1,
 }
 return myObj
 }
-
-var calc = createCalculator()
-
-console.log(calc.add(5).value())
