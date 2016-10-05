@@ -29,3 +29,22 @@ function once(f) {
         executed = true;
     };
 };
+
+function createObjectWithClosures(){
+	var num = 0
+	var myObj = {
+	oneIncrementer: function(){
+		num = num + 1 
+	},
+	tensIncrementer: function(){
+		num = num + 10
+	},
+	getValue: function(){
+		return num
+	},
+	setValue: function(v){
+		num = v
+	},
+}
+return myObj;
+}
